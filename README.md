@@ -81,24 +81,46 @@ chainforge/
 
 ## 🧪 Local Development
 
-### 🛠 Smart Contracts
+### Smart Contract
 
+#### Build
 ```bash
-cd contracts
+cd contracts/gamer_profile_contract
 cargo +nightly contract build
-````
+```
 
-Use `cargo-contract` and a local Polkadot node to test or deploy.
+#### Test
+```bash
+cd contracts/gamer_profile_contract
+cargo +nightly contract test
+```
+_(Note: Tests might time out in some environments due to long compilation times.)_
 
-### 🌐 Frontend
+### Frontend
 
+#### Setup
 ```bash
 cd web
 npm install
-npm run dev
+```
+_(Note: `npm install` might time out in some environments due to network or resource limitations.)_
+
+#### Run
+```bash
+cd web
+npm run start
 ```
 
-Visit `http://localhost:3000` to test frontend with wallet connection.
+This will start a development server, usually at `http://localhost:3000`.
+
+#### Features
+- Connect to Polkadot{.js} extension.
+- Select an account.
+- Create a gamer profile (mocked interaction with the smart contract).
+  - Input a handle.
+  - Displays the created profile (handle and level 1).
+- Get a gamer profile (mocked interaction).
+  - Displays a fetched profile.
 
 ---
 
